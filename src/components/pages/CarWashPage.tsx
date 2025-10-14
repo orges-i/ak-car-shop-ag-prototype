@@ -178,7 +178,7 @@ export function CarWashPage({ language }: CarWashPageProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 text-center"
           >
-            <a className="mt-5" href="tel:+41813226633">
+            <a  href="tel:+41813226633">
               <Button className="bg-accent hover:bg-accent/90 px-8 py-6">
                 <Phone className="mr-2 text-gray-300" size={20} />
                 <span className="text-gray-300">{language === 'de' ? 'Jetzt anrufen: +41 81 322 66 33' : 'Call now: +41 81 322 66 33'}</span>
