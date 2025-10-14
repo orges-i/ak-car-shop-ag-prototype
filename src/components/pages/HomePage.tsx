@@ -4,6 +4,7 @@ import { Card } from "../ui/card";
 import { Heart, Shield, Users, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useTranslations, type Language } from "../../lib/translations";
+import { Testimonials } from "../Testimonials";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -205,6 +206,9 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials language={language} />
     </div>
   );
 }

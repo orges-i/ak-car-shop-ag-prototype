@@ -57,7 +57,7 @@ export function CarWashPage({ language }: CarWashPageProps) {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1331"
+            src="https://lh5.googleusercontent.com/p/AF1QipMzlpFySoHLXlXRxpnMxzKZ1lXdF3kYyTjc-1lI=w408-h306-k-no"
             alt="Car Wash"
             className="w-full h-full object-cover opacity-40"
           />
@@ -186,6 +186,51 @@ export function CarWashPage({ language }: CarWashPageProps) {
               </Button>
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-black mb-4">{language === 'de' ? 'Unsere Anlage' : 'Our Facility'}</h2>
+            <div className="w-24 h-1 bg-accent mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                src: "https://lh5.googleusercontent.com/p/AF1QipOL9KsPD39l8f0oaPLvPFVyaHLqQOUi5cC6GYRT=w408-h306-k-no",
+                alt: "Car Wash Facility View 1"
+              },
+              {
+                src: "https://lh5.googleusercontent.com/p/AF1QipPGJB5z0rOzl1_M4t5v8K5OnN2_Sk8QHKWGvBjN=w408-h306-k-no",
+                alt: "Car Wash Facility View 2"
+              }
+            ].map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer"
+              >
+                <ImageWithFallback
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
