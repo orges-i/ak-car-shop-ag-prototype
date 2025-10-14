@@ -54,9 +54,9 @@ export function Footer({ onNavigate, language }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-black text-white pt-12 pb-6 relative border-t-2 border-accent w-full overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-black text-white pt-12 pb-6 relative border-t-2 border-accent w-full overflow-x-hidden" style={{ maxWidth: '100vw' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" style={{ maxWidth: '100vw' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 w-full" style={{ maxWidth: '100%' }}>
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
