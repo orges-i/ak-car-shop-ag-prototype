@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence } from "motion/react";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
-import { Preloader } from "./components/Preloader";
 import { HomePage } from "./components/pages/HomePage";
 import { UeberUnsPage } from "./components/pages/UeberUnsPage";
 import { CarWashPage } from "./components/pages/CarWashPage";
@@ -16,16 +14,8 @@ import type { Language } from "./lib/translations";
 export default function App() {
   const [currentPage, setCurrentPage] = useState("Home");
   const [language, setLanguage] = useState<Language>("de");
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
+  // Scroll to top when page changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
@@ -54,23 +44,17 @@ export default function App() {
   };
 
   return (
-    <>
-      <AnimatePresence>
-        {isLoading && <Preloader />}
-      </AnimatePresence>
-
-      <div className="min-h-screen flex flex-col">
-        <Navigation
-          currentPage={currentPage}
-          onNavigate={setCurrentPage}
-          language={language}
-          onLanguageChange={setLanguage}
-        />
-        <main className="flex-1">
-          {renderPage()}
-        </main>
-        <Footer onNavigate={setCurrentPage} language={language} />
-      </div>
-    </>
+    <div className="min-h-screen flex flex-col">
+      <Navigation 
+        currentPage={currentPage} 
+        onNavigate={setCurrentPage} 
+        language={language}
+        onLanguageChange={setLanguage}
+      />
+      <main className="flex-1">
+        {renderPage()}
+      </main>
+      <Footer onNavigate={setCurrentPage} language={language} />
+    </div>
   );
 }
