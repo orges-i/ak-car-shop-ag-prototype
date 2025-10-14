@@ -39,8 +39,8 @@ export function Navigation({
 
   return (
     <nav className="bg-black text-white sticky top-0 z-50 shadow-lg border-b-2 border-accent w-full overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex items-center justify-between h-20 relative">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 w-full">
+        <div className="flex items-center justify-between h-20 relative min-w-0">
           {/* Desktop Left Nav */}
           <div className="hidden lg:flex items-center gap-1">
             {leftPages.map((page) => (
@@ -69,13 +69,13 @@ export function Navigation({
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 cursor-pointer"
+            className="flex items-center gap-3 cursor-pointer shrink-0"
             onClick={() => onNavigate("Home")}
           >
             <img
               src="https://static.wixstatic.com/media/da3d09_06c476ad0d264bb1a64a169d1d5a3135~mv2.png/v1/fill/w_376,h_392,al_c,lg_1,q_85,enc_avif,quality_auto/Logo.png"
               alt="AK Car Shop Logo"
-              className="h-16 w-auto max-w-full"
+              className="h-12 lg:h-16 w-auto max-w-[60px] lg:max-w-[80px]"
             />
           </motion.div>
 
