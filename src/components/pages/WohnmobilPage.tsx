@@ -203,6 +203,25 @@ export function WohnmobilPage({ onNavigate, language }: WohnmobilPageProps) {
         </div>
       </section>
 
+     {/* Image Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-lg overflow-hidden shadow-2xl"
+          >
+            <ImageWithFallback
+              src="https://static.wixstatic.com/media/90a441_e124862d6e1e4dbf99c605aebcabfda4~mv2.jpg/v1/fill/w_883,h_450,al_c,lg_1,q_85,enc_avif,quality_auto/90a441_e124862d6e1e4dbf99c605aebcabfda4~mv2.jpg"
+              alt="Wohnmobil Interior"
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </div>
+      </section>
+      
       {/* Rental Information */}
       <section className="py-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,24 +274,6 @@ export function WohnmobilPage({ onNavigate, language }: WohnmobilPageProps) {
         </div>
       </section>
 
-      {/* Image Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-lg overflow-hidden shadow-2xl"
-          >
-            <ImageWithFallback
-              src="https://static.wixstatic.com/media/90a441_e124862d6e1e4dbf99c605aebcabfda4~mv2.jpg/v1/fill/w_883,h_450,al_c,lg_1,q_85,enc_avif,quality_auto/90a441_e124862d6e1e4dbf99c605aebcabfda4~mv2.jpg"
-              alt="Wohnmobil Interior"
-              className="w-full h-auto"
-            />
-          </motion.div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-white">
