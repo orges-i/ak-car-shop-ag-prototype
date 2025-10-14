@@ -22,17 +22,17 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-black w-full max-w-full">
-        <div className="absolute inset-0 z-0 w-full h-full">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-black w-full">
+        <div className="absolute inset-0 z-0">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1759580827787-2eed5f9eb87c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjB3b3Jrc2hvcHxlbnwxfHx8fDE3NjAwMTczMjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="AK Car Shop Workshop"
-            className="w-full h-full object-cover opacity-40 max-w-full"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 w-full h-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
