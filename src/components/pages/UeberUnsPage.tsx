@@ -38,7 +38,7 @@ export function UeberUnsPage({ language }: UeberUnsPageProps) {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1631720040176-0d789a643a78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvJTIwbWVjaGFuaWMlMjBnYXJhZ2V8ZW58MXx8fHwxNzU5OTc1MTMzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://static.wixstatic.com/media/90a441_69cfa499baff44dc8c2d0df20c049835~mv2.jpg/v1/fill/w_732,h_550,al_c,q_85,enc_avif,quality_auto/90a441_69cfa499baff44dc8c2d0df20c049835~mv2.jpg"
             alt="Über uns"
             className="w-full h-full object-cover opacity-40"
           />

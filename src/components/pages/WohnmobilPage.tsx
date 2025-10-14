@@ -15,41 +15,46 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 
+import { useTranslations, type Language } from "../../lib/translations";
+
 interface WohnmobilPageProps {
   onNavigate: (page: string) => void;
+  language: Language;
 }
 
-export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
+export function WohnmobilPage({ onNavigate, language }: WohnmobilPageProps) {
+  const t = useTranslations(language);
+
   const features = [
-    { icon: Users, label: "5 Reiseplätze" },
-    { icon: Bed, label: "6 Schlafplätze" },
-    { icon: Settings, label: "Schaltgetriebe" },
-    { icon: Wind, label: "Klimaanlage" },
-    { icon: Camera, label: "Rückfahrkamera" },
-    { icon: Radio, label: "Radio/Navi" },
+    { icon: Users, label: language === 'de' ? "5 Reiseplätze" : "5 Travel Seats" },
+    { icon: Bed, label: language === 'de' ? "6 Schlafplätze" : "6 Sleeping Places" },
+    { icon: Settings, label: language === 'de' ? "Schaltgetriebe" : "Manual Transmission" },
+    { icon: Wind, label: language === 'de' ? "Klimaanlage" : "Air Conditioning" },
+    { icon: Camera, label: language === 'de' ? "Rückfahrkamera" : "Rear View Camera" },
+    { icon: Radio, label: language === 'de' ? "Radio/Navi" : "Radio/GPS" },
   ];
 
   const technicalData = [
-    { label: "Baujahr", value: "2020" },
-    { label: "Reiseplätze", value: "5" },
-    { label: "Schlafplätze", value: "6" },
-    { label: "Länge", value: "651 cm" },
-    { label: "Höhe", value: "319 cm" },
-    { label: "Breite", value: "233 cm" },
-    { label: "Leistung", value: "160 PS" },
-    { label: "Leergewicht", value: "3000 kg" },
-    { label: "Zul. Gesamtgewicht", value: "3500 kg" },
+    { label: t.motorhome.year, value: "2020" },
+    { label: t.motorhome.travelSeats, value: "5" },
+    { label: t.motorhome.sleepingPlaces, value: "6" },
+    { label: t.motorhome.length, value: "651 cm" },
+    { label: t.motorhome.height, value: "319 cm" },
+    { label: t.motorhome.width, value: "233 cm" },
+    { label: t.motorhome.power, value: "160 PS" },
+    { label: t.motorhome.emptyWeight, value: "3000 kg" },
+    { label: t.motorhome.totalWeight, value: "3500 kg" },
   ];
 
   const equipment = [
-    "Markise für Schatten",
-    "Rückfahrkamera für sicheres Rangieren",
-    "Veloträger für Fahrräder",
-    "Klimaanlage für angenehmes Raumklima",
-    "Radio/Navigationssystem",
-    "Vollausgestattete Küche",
-    "Sanitärbereich mit Dusche/WC",
-    "Heizung für alle Jahreszeiten",
+    language === 'de' ? "Markise für Schatten" : "Awning for shade",
+    language === 'de' ? "Rückfahrkamera für sicheres Rangieren" : "Rear view camera for safe maneuvering",
+    language === 'de' ? "Veloträger für Fahrräder" : "Bike rack for bicycles",
+    language === 'de' ? "Klimaanlage für angenehmes Raumklima" : "Air conditioning for pleasant climate",
+    language === 'de' ? "Radio/Navigationssystem" : "Radio/Navigation system",
+    language === 'de' ? "Vollausgestattete Küche" : "Fully equipped kitchen",
+    language === 'de' ? "Sanitärbereich mit Dusche/WC" : "Sanitary area with shower/toilet",
+    language === 'de' ? "Heizung für alle Jahreszeiten" : "Heating for all seasons",
   ];
 
   return (
@@ -72,18 +77,18 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
           className="relative z-10 text-center px-4"
         >
           <Badge className="bg-accent text-black hover:bg-accent/90 mb-4">
-            Jetzt verfügbar
+            {t.motorhome.available}
           </Badge>
-          <h1 className="text-white mb-4">Wohnmobil Vermietung</h1>
+          <h1 className="text-white mb-4">{t.motorhome.pageTitle}</h1>
           <div className="w-24 h-1 bg-accent mx-auto mb-4" />
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            Dethleffs Trend A5887 - Ihr perfekter Begleiter für unvergessliche Reisen
+            {t.motorhome.subtitle}
           </p>
           <Button
             onClick={() => onNavigate("Kontakt")}
             className="bg-accent text-black hover:bg-accent/90 px-8 py-6 group"
           >
-            Jetzt Mieten
+            {t.motorhome.rentButton}
             <motion.span
               className="ml-2 inline-block"
               animate={{ x: [0, 5, 0] }}
@@ -105,7 +110,7 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-black mb-4">Highlights</h2>
+            <h2 className="text-black mb-4">{t.motorhome.highlightsTitle}</h2>
             <div className="w-24 h-1 bg-accent mx-auto" />
           </motion.div>
 
@@ -146,7 +151,7 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-black mb-4">Technische Daten</h2>
+              <h2 className="text-black mb-4">{t.motorhome.technicalTitle}</h2>
               <div className="w-24 h-1 bg-accent mb-6" />
               <Card className="p-6">
                 <div className="space-y-4">
@@ -174,7 +179,7 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-black mb-4">Ausstattung</h2>
+              <h2 className="text-black mb-4">{t.motorhome.equipmentTitle}</h2>
               <div className="w-24 h-1 bg-accent mb-6" />
               <Card className="p-6">
                 <div className="space-y-3">
@@ -208,7 +213,7 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-white mb-4">Mietinformationen</h2>
+            <h2 className="text-white mb-4">{t.motorhome.rentalInfoTitle}</h2>
             <div className="w-24 h-1 bg-accent mx-auto" />
           </motion.div>
 
@@ -216,18 +221,18 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
             {[
               {
                 icon: Calendar,
-                title: "Flexible Buchung",
-                description: "Tages-, Wochen- oder Monatsbuchungen möglich"
+                title: t.motorhome.flexBooking,
+                description: t.motorhome.flexBookingDesc
               },
               {
                 icon: CheckCircle,
-                title: "All-Inclusive",
-                description: "Vollständige Einweisung und Übergabe inklusive"
+                title: t.motorhome.allInclusive,
+                description: t.motorhome.allInclusiveDesc
               },
               {
                 icon: Settings,
-                title: "Gepflegter Zustand",
-                description: "Regelmäßig gewartet und technisch einwandfrei"
+                title: t.motorhome.condition,
+                description: t.motorhome.conditionDesc
               },
             ].map((item, index) => (
               <motion.div
@@ -250,6 +255,25 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
         </div>
       </section>
 
+      {/* Image Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-lg overflow-hidden shadow-2xl"
+          >
+            <ImageWithFallback
+              src="https://static.wixstatic.com/media/90a441_e124862d6e1e4dbf99c605aebcabfda4~mv2.jpg/v1/fill/w_883,h_450,al_c,lg_1,q_85,enc_avif,quality_auto/90a441_e124862d6e1e4dbf99c605aebcabfda4~mv2.jpg"
+              alt="Wohnmobil Interior"
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -259,17 +283,16 @@ export function WohnmobilPage({ onNavigate }: WohnmobilPageProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-black mb-6">Bereit für Ihr Abenteuer?</h2>
+            <h2 className="text-black mb-6">{t.motorhome.readyTitle}</h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-              Kontaktieren Sie uns für Verfügbarkeit, Preise und weitere Informationen.
-              Wir beraten Sie gerne persönlich und beantworten alle Ihre Fragen.
+              {t.motorhome.readyText}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={() => onNavigate("Kontakt")}
                 className="bg-black text-white hover:bg-accent hover:text-black transition-all duration-300"
               >
-                Jetzt anfragen
+                {t.motorhome.inquireButton}
                 <ArrowRight className="ml-2" size={18} />
               </Button>
               <a href="tel:+41813226633">

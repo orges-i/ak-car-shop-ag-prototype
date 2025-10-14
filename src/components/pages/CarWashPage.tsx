@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
 import { Card } from "../ui/card";
-import { Droplets, Sparkles, Zap, Shield, Star, CheckCircle } from "lucide-react";
+import { Droplets, Sparkles, Zap, Shield, Star, CheckCircle, Phone } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useTranslations, type Language } from "../../lib/translations";
+import { Button } from "../ui/button";
 
 interface CarWashPageProps {
   language: Language;
@@ -56,7 +57,7 @@ export function CarWashPage({ language }: CarWashPageProps) {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1519629689232-677d30b28b1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjB3YXNoJTIwc2VydmljZXxlbnwxfHx8fDE3NTk5NDA4MDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1331"
             alt="Car Wash"
             className="w-full h-full object-cover opacity-40"
           />
@@ -168,6 +169,23 @@ export function CarWashPage({ language }: CarWashPageProps) {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-gray-700 mb-4">{language === 'de' ? 'Haben Sie Fragen zu unseren Waschprogrammen?' : 'Do you have questions about our washing programs?'}</p>
+            <a href="tel:+41813226633">
+              <Button className="bg-accent text-black hover:bg-accent/90 px-8 py-6">
+                <Phone className="mr-2" size={20} />
+                {language === 'de' ? 'Jetzt anrufen: +41 81 322 66 33' : 'Call now: +41 81 322 66 33'}
+              </Button>
+            </a>
+          </motion.div>
         </div>
       </section>
 
