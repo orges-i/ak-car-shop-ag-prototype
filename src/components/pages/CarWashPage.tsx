@@ -4,6 +4,9 @@ import { Droplets, Sparkles, Zap, Shield, Star, CheckCircle, Phone } from "lucid
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useTranslations, type Language } from "../../lib/translations";
 import { Button } from "../ui/button";
+import heroImage from "../../assets/unnamed.jpg";
+import facilityImage1 from "../../assets/2020-11-13.jpg";
+import facilityImage2 from "../../assets/2025-02-01.jpg";
 
 interface CarWashPageProps {
   language: Language;
@@ -57,7 +60,7 @@ export function CarWashPage({ language }: CarWashPageProps) {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src="https://lh5.googleusercontent.com/p/AF1QipMzlpFySoHLXlXRxpnMxzKZ1lXdF3kYyTjc-1lI=w408-h306-k-no"
+            src={heroImage}
             alt="Car Wash"
             className="w-full h-full object-cover opacity-40"
           />
@@ -206,11 +209,11 @@ export function CarWashPage({ language }: CarWashPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                src: "https://lh5.googleusercontent.com/p/AF1QipOL9KsPD39l8f0oaPLvPFVyaHLqQOUi5cC6GYRT=w408-h306-k-no",
+                src: facilityImage1,
                 alt: "Car Wash Facility View 1"
               },
               {
-                src: "https://lh5.googleusercontent.com/p/AF1QipPGJB5z0rOzl1_M4t5v8K5OnN2_Sk8QHKWGvBjN=w408-h306-k-no",
+                src: facilityImage2,
                 alt: "Car Wash Facility View 2"
               }
             ].map((image, index) => (
