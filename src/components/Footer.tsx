@@ -54,8 +54,8 @@ export function Footer({ onNavigate, language }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-black text-white pt-12 pb-6 relative border-t-2 border-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-black text-white pt-12 pb-6 relative border-t-2 border-accent w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
@@ -63,7 +63,7 @@ export function Footer({ onNavigate, language }: FooterProps) {
               <img
                 src="https://static.wixstatic.com/media/da3d09_06c476ad0d264bb1a64a169d1d5a3135~mv2.png/v1/fill/w_376,h_392,al_c,lg_1,q_85,enc_avif,quality_auto/Logo.png"
                 alt="AK Car Shop Logo"
-                className="h-16 w-auto"
+                className="h-16 w-auto max-w-full"
               />
             </div>
             <p className="text-gray-400 mt-4">

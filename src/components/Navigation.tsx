@@ -38,8 +38,8 @@ export function Navigation({
   const rightPages = pages.slice(5); // remaining 3 items on the right
 
   return (
-    <nav className="bg-black text-white sticky top-0 z-50 shadow-lg border-b-2 border-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-black text-white sticky top-0 z-50 shadow-lg border-b-2 border-accent w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between h-20 relative">
           {/* Desktop Left Nav */}
           <div className="hidden lg:flex items-center gap-1">
@@ -75,7 +75,7 @@ export function Navigation({
             <img
               src="https://static.wixstatic.com/media/da3d09_06c476ad0d264bb1a64a169d1d5a3135~mv2.png/v1/fill/w_376,h_392,al_c,lg_1,q_85,enc_avif,quality_auto/Logo.png"
               alt="AK Car Shop Logo"
-              className="h-16 w-auto"
+              className="h-16 w-auto max-w-full"
             />
           </motion.div>
 
