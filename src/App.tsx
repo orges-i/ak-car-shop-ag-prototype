@@ -44,14 +44,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden w-full" style={{ maxWidth: '100vw', position: 'relative' }}>
+    <div className="min-h-screen flex flex-col overflow-x-hidden max-w-full">
       <Navigation
         currentPage={currentPage}
         onNavigate={setCurrentPage}
         language={language}
         onLanguageChange={setLanguage}
       />
-      <main className="flex-1 overflow-x-hidden w-full" style={{ maxWidth: '100vw' }}>
+      <main className="flex-1 overflow-x-hidden w-full">
         {renderPage()}
       </main>
       <Footer onNavigate={setCurrentPage} language={language} />
