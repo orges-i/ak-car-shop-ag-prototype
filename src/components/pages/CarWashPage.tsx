@@ -178,7 +178,6 @@ export function CarWashPage({ language }: CarWashPageProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 text-center"
           >
-            <p className="text-gray-700 mb-6 pt-8">{language === 'de' ? 'Haben Sie Fragen zu unseren Waschprogrammen?' : 'Do you have questions about our washing programs?'}</p>
             <a href="tel:+41813226633">
               <Button className="bg-accent hover:bg-accent/90 px-8 py-6">
                 <Phone className="mr-2 text-gray-300" size={20} />
